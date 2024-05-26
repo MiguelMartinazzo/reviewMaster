@@ -38,4 +38,36 @@
         color: red;
         font-family: Arial, Helvetica, sans-serif;
     }
+
+    .input-submit{
+        background-color: #3253c2;
+        border: none;
+        color: #ffffff;
+        padding: 15px 0px;
+        text-align: center;
+        margin-top: 5px;
+        font-size: 14px;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 10px 30px 0 #5e76c5;
+        transition: all 0.3s ease-in-out;
+        width: 60%;
+        cursor: pointer;
+    }
+
+    .logo{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        height: 80px;
+        background-color: #3253c2;
+        border: none;
+        color: #ffffff;
+        font-size: 14px;
+        border-radius: 5px 5px 5px 5px;
+        box-shadow: 0 10px 30px 0 #5e76c5;
+        width: 95%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 20px auto;
+        
+    }
  }
