@@ -11,7 +11,7 @@
             <input class="input-login" placeholder="E-mail" formControlName="email" />
         </div>
         <div class="mensagem-erro" 
-        *ngIf="loginForm.get('email')?.errors?.required" >
+        *ngIf="loginForm.get('email')?.errors?.required " >
             Campo Obrigatório!
         </div>
         <div class="mensagem-erro" 
@@ -25,7 +25,7 @@
         <div>
             <input class="input-login" type="password" placeholder="Senha" formControlName="senha" />
         </div>
-        <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.required && loginForm.get('senha')" >
+        <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.required" >
             Campo Obrigatório!
         </div>          
     </div>
