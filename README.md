@@ -12,7 +12,10 @@ nas discussões criadas por eles ou criando sua própria discussão.
 ## Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[NPM](npm install), [GitBash](https://git-scm.com/downloads), [NVM](nvm install 20.10.0)
+- [NPM](npm install)
+- [GitBash](https://git-scm.com/downloads)
+- [NVM](nvm install 20.10.0)
+
 Também é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ## Iniciando o WebSite
@@ -50,7 +53,7 @@ de ReviewMaster.
 ### 🛠 Tecnologias
 As seguintes ferramentas foram usadas na construção do projeto:
 
-[Angular17](npm i -g@angular/cli)
-[TypeScript](npm i typescript -D)
-[NPM](npm install) 
-[NVM](nvm install 20.10.0)
+- [Angular17](npm i -g@angular/cli)
+- [TypeScript](npm i typescript -D)
+- [NPM](npm install) 
+- [NVM](nvm install 20.10.0)
