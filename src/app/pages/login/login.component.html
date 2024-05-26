@@ -1,0 +1,13 @@
+<div class="conteudo-login">
+
+    <form class="conteudo-form" [formGroup]="loginForm">
+<div>
+    <div>
+        <input class="input-login" placeholder="email" formControlName="email" />
+    </div>
+    <div class="mensagem-erro" ngIf="loginForm.get('email').errors?.required && loginForm.get('email').errors?.touched " >
+        E-mail Obrigatório!!
+    </div>
+</div>
+    </form>
+</div>
