@@ -9,7 +9,7 @@ geral mude (ou não, dependendo da quantidade de avaliações), poderá também 
 Caso você clique em algum dos jogos você entrará na página dele, na qual poderá interagir com outros usuários comentando
 nas discussões criadas por eles ou criando sua própria discussão.
 
-![Badge](https://img.shields.io/badge/README-%237159c1?style=for-the-badge&logo=ghost) ## Pré-requisitos
+### :bookmark_tabs: Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 - [NPM](**npm install**)
@@ -18,7 +18,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 Também é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
-:rocket: ## Iniciando o WebSite
+### :rocket: Iniciando o WebSite
 
 Para inicializar o nosso WebSite, após ter clonado nosso repositório via git clone, você terá
 que executar **ng serve -o** dentro da pasta raiz do projeto e após abrir o WebSite realizar o login
