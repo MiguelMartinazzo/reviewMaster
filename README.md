@@ -17,6 +17,9 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 - [NVM](**nvm install 20.10.0**)
 - [Angular](**npm install -g @angular/cli@latest**)
 
+É necessário clonar esse repositório (https://github.com/techiediaries/node-mongoose-jwt.git) 
+e rodar ele juntamente com o WebSite com **npm start**, para isso rode **npm install** na pasta raiz
+
 Também é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
 ### :rocket: Iniciando o WebSite
