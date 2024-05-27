@@ -30,25 +30,21 @@ de ReviewMaster.
 <p id="mapaprojeto" align="left">Abaixo segue a estrutura de pastas e suas definições:</p>
  
 ```bash
+├──.vscode                  // Extemsões do VSCode
+├──public                   // Pasta pública (Irei excluir)
 ├── src					            // Pasta raiz com a estrutura do projeto
-│  └── Adapter                      // Pasta para criar os serviços de comunicação / Ports & Adpters
-│       └── Provider                // Pasta com o projeto de API
-│   └── Core                        // Pasta com os princípais serviços do projeto
-│       └── Application             // Pasta com o projeto para o mapeamento das entidades entre domain e serviços
-│          └── Mapper               // Pasta com os mappers entre viewmodel e entidade
-│          └── ViewModel            // Pasta com os objetos de ViewModel / DTO
-│       └── Domain                  // Pasta com organização das entidades Domínio do projeto
-│          └── Interfaces           // Pasta com os contratos expostos pelo Domínio
-│          └── Models               // Pasta com organização das Entidades e Serviços usando CQRS
-│          	└── Commands            // Pasta com os comandos e handler CQRS
-│          	└── Entities            // Pasta com entidades
-│          	└── Events              // Pasta com os eventos
-│          └── Query                // Pasta com as querys e handler CQRS
-│   └── Infrastructure              // Pasta com projeto de infrastructure e configurações de acesso a banco
-│       └── Mappings                // Pasta com Mappings usando fluent das entidades para o banco
-│       └── Migrations              // Pasta com as Migrations aplicadas / a serem aplicadas
-│       └── Repository              // Pasta com contexto e configuração do objeto de repository das entidades
-├── tests				            // Pasta com projeto de testes unitários do microserviço
+│  └── App                  // Pasta aonde contém todos componentes do WebSite
+│  └── index.html           // Index geral
+│  └── main.server.ts       // Inicializa o WebSite? (Verificar depois certinho)
+│  └── main.ts              // Inicializa o WebSite (Verificar depois certinho)
+│  └── styles.scss          // Styles Sheets geral
+├──.editorconfig            // Plugin que padroniza o estilo de código para IDEs
+├──.env                     // Gerenciador de váriaveis
+├──.gitignore               // Arquivo que define o que vai subir com o push
+├──README.md                // Arquivo que explica como funciona tudo
+├──angular.json             // Fornece valores padrões de configuração para o espaço de trabalho
+├──package-lock.json        // Contem as dependências instaladas no projeto.
+├──package.json             // Contem as dependências, a versão, o autor e a licença.
 ```
 
 ### 🛠 Tecnologias
@@ -58,3 +54,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [TypeScript](**npm i typescript -D**)
 - [NPM](**npm install**) 
 - [NVM](**nvm install 20.10.0**)
+- [API](https://github.com/techiediaries/node-mongoose-jwt)
