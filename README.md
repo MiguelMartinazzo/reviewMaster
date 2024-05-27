@@ -15,6 +15,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 - [NPM](**npm install**)
 - [GitBash](https://git-scm.com/downloads)
 - [NVM](**nvm install 20.10.0**)
+- [Angular](**npm install -g @angular/cli@latest**)
 
 Também é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/)
 
