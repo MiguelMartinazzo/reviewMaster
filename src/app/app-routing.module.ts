@@ -2,15 +2,34 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 
+import { SignupComponent } from './pages/signup/signup.component';
+import { AdminComponent } from './pages/admin/admin.component';
+import { authGuard } from './auth/auth.guard';
+
 const routes: Routes = [
-  {
-    path:"",
-    pathMatch:"full",
-    redirectTo:"login"
+  /*{
+    path: "",
+    pathMatch: "full",
+    redirectTo: "login"
   },
 
   {
-    path:"login", component: LoginComponent
+    path: "login", component: LoginComponent
+  }*/ //Sidnei routes
+
+  //Variables that contains all functions for login page
+  {
+    path: '', redirectTo: '/login', pathMatch: 'full'
+  },
+  {
+    path: 'login', component: LoginComponent
+  },
+  {
+    path: 'signup', component: SignupComponent
+  },
+
+  {
+    path: 'admin', component: AdminComponent, canActivate: [authGuard]
   }
 ];
 
@@ -19,3 +38,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
