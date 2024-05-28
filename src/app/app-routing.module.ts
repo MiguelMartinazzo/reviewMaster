@@ -7,16 +7,6 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  /*{
-    path: "",
-    pathMatch: "full",
-    redirectTo: "login"
-  },
-
-  {
-    path: "login", component: LoginComponent
-  }*/ //Sidnei routes
-
   //Variables that contains all functions for login page
   {
     path: '', redirectTo: '/login', pathMatch: 'full'
