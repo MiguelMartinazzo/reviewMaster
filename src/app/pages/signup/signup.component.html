@@ -5,8 +5,21 @@
     </div>
     <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <input type="text" name="name" placeholder="Name" formControlName="name">
+        <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+            <small *ngIf="loginForm.controls.text.errors?.required">Name is required.</small>
+        </div>
+
         <input type="email" name="email" placeholder="Email" formControlName="email">
+        <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+            <small *ngIf="loginForm.controls.email.errors?.required">Email is required.</small>
+            <small *ngIf="loginForm.controls.email.errors?.email">Invalid email format.</small>
+        </div>
+
         <input type="password" name="password" placeholder="Password" formControlName="password">
+        <div class="mensagem-erro" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+            <small *ngIf="loginForm.controls.password.errors?.password">Invalid password format.<br>Password should contains a lowercase, a uppercase character and a digit!</small>
+        </div>
+
         <input type="submit" value="Signup">
     </form>
     <div class="card-terms">

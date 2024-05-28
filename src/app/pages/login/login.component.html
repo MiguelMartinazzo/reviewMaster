@@ -45,17 +45,53 @@
 </div> -->
 <!-- Commenting Sidnei´s code temporary, making a functional login-->
 
+<!--
+  <div class="full-screen-container">
+    <div class="login-container">
+      <h1 class="login-title">Welcome</h1>
+      <form class="form">
+        <div class="input-group success">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <span class="msg">Valid email</span>
+        </div>
 
-<div class="login-card">
+        <div class="input-group error">
+          <label for="password">Password</label>
+          <input type="password" name="password" id="password">
+          <span class="msg">Incorrect password</span>
+        </div>
 
-    <div class="card-title">
-        <h1>Login</h1>
-        <span>You don't have an account? <a routerLink="/signup">Sign up</a></span>
+        <button type="submit" class="login-button">Login</button>
+      </form>
     </div>
-    <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <input name="email" type="email" formControlName="email" placeholder="Email">
-        <input type="password" formControlName="password" placeholder="Password">
-        <button>Submit</button>
-    </form>
+  </div>
+-->
 
+<div class="full-screen-container">
+    <div class="login-card">
+
+        <div class="card-title">
+            <h1>Login</h1>
+            <span>You don't have an account? <a routerLink="/signup">Sign up</a></span>
+        </div>
+        <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <!--Email input tester-->
+                <input name="email" type="email" formControlName="email" placeholder="Email">
+                <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
+                    <small *ngIf="loginForm.controls.email.errors?.required">Email is required.</small>
+                    <small *ngIf="loginForm.controls.email.errors?.email">Invalid email format.</small>
+                </div>
+
+                <!--Password input tester-->
+                <input type="password" formControlName="password" placeholder="Password">
+                <div class="mensagem-erro" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
+                    <small *ngIf="loginForm.controls.password.errors?.required">Password is required.</small>
+                </div>
+            </div>
+            <button class="login-button">Submit</button>
+        </form>
+
+    </div>
 </div>
