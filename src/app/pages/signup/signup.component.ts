@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-
-//New Imports
 import { inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
@@ -39,6 +37,9 @@ export class SignupComponent {
           },
           error: (err) => console.log(err)
         });
+    }else {
+      // Alert user about the required fields
+      alert('Name, Email and Password are required.');
     }
   }
 }

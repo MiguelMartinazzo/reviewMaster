@@ -1,0 +1,3 @@
+[submodule "node-mongoose-jwt"]
+	path = node-mongoose-jwt
+	url = https://github.com/MiguelMartinazzo/reviewMaster.git
