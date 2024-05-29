@@ -4,9 +4,30 @@
         <span>Already have an account? <a routerLink="/login">Sign In</a></span>
     </div>
     <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+        
         <input type="text" name="name" placeholder="Name" formControlName="name">
+        <div class="mensagem-erro" 
+        *ngIf="signupForm.get('name')?.errors?.required " >
+            Campo Obrigatório!
+        </div>
+        <div class="mensagem-erro"
+        *ngIf="signupForm.get('email')?.errors?.email ">
+            formato do E-mail não é valido!            
+        </div>  
+        
         <input type="email" name="email" placeholder="Email" formControlName="email">
+
+        <div class="mensagem-erro" 
+        *ngIf="signupForm.get('email')?.errors?.required " >
+            Campo Obrigatório!
+        </div>
+        
         <input type="password" name="password" placeholder="Password" formControlName="password">
+
+        <div class="mensagem-erro" 
+        *ngIf="signupForm.get('password')?.errors?.required " >
+            Campo Obrigatório!
+        </div>
         <input type="submit" value="Signup">
     </form>
     <div class="card-terms">
