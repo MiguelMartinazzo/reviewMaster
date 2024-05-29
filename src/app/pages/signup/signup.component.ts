@@ -3,11 +3,13 @@ import { inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../auth/auth.service';
+import { CommonModule } from '@angular/common';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.scss'
 })
@@ -21,8 +23,29 @@ export class SignupComponent {
   public signupForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required])
+    password: new FormControl('', [Validators.required]),
+    terms: new FormControl(false, [Validators.requiredTrue])
   })
+
+  // Variable to store error message
+  public errorMessage: string | null = null;
+
+  // Getters for form controls
+  get name() {
+    return this.signupForm.get('name');
+  }
+
+  get email() {
+    return this.signupForm.get('email');
+  }
+
+  get password() {
+    return this.signupForm.get('password');
+  }
+
+  get terms() {
+    return this.signupForm.get('terms');
+  }
 
   //When Submit Method
   public onSubmit() {
@@ -34,11 +57,15 @@ export class SignupComponent {
             console.log(data);
             this.router.navigate(['/login']);
           },
-          error: (err) => console.log(err)
+          error: (error: HttpErrorResponse) => {
+            console.log(error);
+            this.errorMessage = error.error.message; // Store the error message
+          }
         });
     }else {
-      // Alert user about the required fields
-      alert('Name, Email and Password are required.');
+      // Alert user about the required fields if he tries
+      // to submit without even touching any field
+      alert('Name, Email, Password and Terms are required.');
     }
   }
 }

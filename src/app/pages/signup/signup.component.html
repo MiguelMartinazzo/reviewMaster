@@ -1,28 +1,44 @@
-<div class="signup-card">
-    <div class="card-title">
-        <h1>Create Account</h1>
-        <span>Already have an account? <a routerLink="/login">Sign In</a></span>
-    </div>
-    <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-        <input type="text" name="name" placeholder="Name" formControlName="name">
-        <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
-            <small *ngIf="loginForm.controls.text.errors?.required">Name is required.</small>
+<div class="full-screen-container">
+    <div class="signup-card">
+        <div class="card-title">
+            <h1>Create Account</h1>
+            <span>Already have an account? <a routerLink="/login">Sign In</a></span>
         </div>
+        <form class="form-group" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="input-group">
+                <input type="text" name="name" placeholder="Name" formControlName="name">
 
-        <input type="email" name="email" placeholder="Email" formControlName="email">
-        <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
-            <small *ngIf="loginForm.controls.email.errors?.required">Email is required.</small>
-            <small *ngIf="loginForm.controls.email.errors?.email">Invalid email format.</small>
-        </div>
+                <!-- Error Message Display -->
+                <div class="error-message" *ngIf="name?.invalid && name?.touched">
+                    <small class="mensagem-erro" *ngIf="name?.errors?.required">Name is required</small>
+                </div>
 
-        <input type="password" name="password" placeholder="Password" formControlName="password">
-        <div class="mensagem-erro" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
-            <small *ngIf="loginForm.controls.password.errors?.password">Invalid password format.<br>Password should contains a lowercase, a uppercase character and a digit!</small>
-        </div>
+                <input type="email" name="email" placeholder="Email" formControlName="email">
 
-        <input type="submit" value="Signup">
-    </form>
-    <div class="card-terms">
-        <input type="checkbox"> <span>I have read and agree to the <a href="">Terms of Service</a></span>
+                <!-- Error Message Display -->
+                <div class="error-message" *ngIf="email?.invalid && email?.touched">
+                    <small class="mensagem-erro" *ngIf="email?.errors?.required">Email is required</small>
+                    <small class="mensagem-erro" *ngIf="email?.errors?.email">Invalid email format</small>
+                </div>
+
+                <input type="password" name="password" placeholder="Password" formControlName="password">
+
+                <!-- Error Message Display -->
+                <div class="error-message" *ngIf="password?.invalid && password?.touched">
+                    <small class="mensagem-erro" *ngIf="password?.errors?.required">Password is required</small>
+                    <small class="mensagem-erro">{{ errorMessage }}</small>
+                </div>
+            </div>
+            <div>
+                <input class="card-terms" type="checkbox" formControlName="terms">
+                <span> I have read and agree to the <a href="https://www.termsandconditionsgenerator.com/live.php?token=ciaKp8Nn2ZvwtaRzupiWRpCrpj39DbiA">Terms of Service</a></span>
+
+                <!-- Error Message Display -->
+                <div *ngIf="terms?.invalid && terms?.touched" class="error-message">
+                    <small *ngIf="terms?.errors?.requiredTrue">You must agree to the terms</small>
+                </div>
+            </div>
+            <input class="signup-button" type="submit" value="Signup">
+        </form>
     </div>
 </div>

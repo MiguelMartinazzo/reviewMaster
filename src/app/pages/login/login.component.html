@@ -1,73 +1,3 @@
-<!-- <div class="conteudo-login">
-
-    <form class="conteudo-form" [formGroup]="loginForm" (submit)="submitLogin()">
-
-<div class="logo">
-    Logo
-</div>
-
-    <div>
-        <div>
-            <input class="input-login" placeholder="E-mail" formControlName="email" />
-        </div>
-        <div class="mensagem-erro" 
-        *ngIf="loginForm.get('email')?.errors?.required " >
-            Campo Obrigatório!
-        </div>
-        <div class="mensagem-erro" 
-        *ngIf="loginForm.get('email')?.errors?.email ">
-            formato do E-mail não é valido!
-            
-        </div>    
-    </div>
-
-    <div>
-        <div>
-            <input class="input-login" type="password" placeholder="Senha" formControlName="senha" />
-        </div>
-        <div class="mensagem-erro" *ngIf="loginForm.get('senha')?.errors?.required" >
-            Campo Obrigatório!
-        </div>          
-    </div>
-
-    <div>
-        <button class="input-submit" [disabled]="!loginForm.valid">
-            Logar
-        </button>
-    </div>
-    <div>
-        <button class="input-regist">
-            Registrar
-        </button>
-    </div>
-
-    </form>
-</div> -->
-<!-- Commenting Sidnei´s code temporary, making a functional login-->
-
-<!--
-  <div class="full-screen-container">
-    <div class="login-container">
-      <h1 class="login-title">Welcome</h1>
-      <form class="form">
-        <div class="input-group success">
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email">
-          <span class="msg">Valid email</span>
-        </div>
-
-        <div class="input-group error">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password">
-          <span class="msg">Incorrect password</span>
-        </div>
-
-        <button type="submit" class="login-button">Login</button>
-      </form>
-    </div>
-  </div>
--->
-
 <div class="full-screen-container">
     <div class="login-card">
 
@@ -77,18 +7,22 @@
         </div>
         <form class="form-group" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
             <div class="input-group">
-                <!--Email input tester-->
+
                 <input name="email" type="email" formControlName="email" placeholder="Email">
+
+                <!-- Error Message Display -->
                 <div class="mensagem-erro" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">
                     <small *ngIf="loginForm.controls.email.errors?.required">Email is required.</small>
                     <small *ngIf="loginForm.controls.email.errors?.email">Invalid email format.</small>
                 </div>
 
-                <!--Password input tester-->
                 <input type="password" formControlName="password" placeholder="Password">
+
+                <!-- Error Message Display -->
                 <div class="mensagem-erro" *ngIf="loginForm.controls.password.invalid && loginForm.controls.password.touched">
                     <small *ngIf="loginForm.controls.password.errors?.required">Password is required.</small>
                 </div>
+
             </div>
             <button class="login-button">Submit</button>
         </form>
