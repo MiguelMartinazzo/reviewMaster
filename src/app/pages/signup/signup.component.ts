@@ -14,16 +14,16 @@ import { HttpErrorResponse } from '@angular/common/http';
   styleUrl: './signup.component.scss'
 })
 export class SignupComponent {
-  
+
   //Inject the authentication and router services
-  authService  =  inject(AuthService);
-  router  =  inject(Router);
+  authService = inject(AuthService);
+  router = inject(Router);
 
   //Reactive form for signing up users
   public signupForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     terms: new FormControl(false, [Validators.requiredTrue])
   })
 
@@ -49,6 +49,8 @@ export class SignupComponent {
 
   //When Submit Method
   public onSubmit() {
+    console.log('Form Status:', this.signupForm.status);
+    console.log('Terms Control Status:', this.terms?.status);
     if (this.signupForm.valid) {
       console.log(this.signupForm.value);
       this.authService.signup(this.signupForm.value)
@@ -62,7 +64,7 @@ export class SignupComponent {
             this.errorMessage = error.error.message; // Store the error message
           }
         });
-    }else {
+    } else {
       // Alert user about the required fields if he tries
       // to submit without even touching any field
       alert('Name, Email, Password and Terms are required.');
