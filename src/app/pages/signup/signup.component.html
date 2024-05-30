@@ -10,35 +10,37 @@
 
                 <!-- Error Message Display -->
                 <div class="error-message" *ngIf="name?.invalid && name?.touched">
-                    <small class="mensagem-erro" *ngIf="name?.errors?.required">Name is required</small>
+                    <small *ngIf="name?.errors?.required">Name is required</small>
                 </div>
 
                 <input type="email" name="email" placeholder="Email" formControlName="email">
 
                 <!-- Error Message Display -->
                 <div class="error-message" *ngIf="email?.invalid && email?.touched">
-                    <small class="mensagem-erro" *ngIf="email?.errors?.required">Email is required</small>
-                    <small class="mensagem-erro" *ngIf="email?.errors?.email">Invalid email format</small>
+                    <small *ngIf="email?.errors?.required">Email is required</small>
+                    <small *ngIf="email?.errors?.email">Invalid email format</small>
                 </div>
 
                 <input type="password" name="password" placeholder="Password" formControlName="password">
 
                 <!-- Error Message Display -->
                 <div class="error-message" *ngIf="password?.invalid && password?.touched">
-                    <small class="mensagem-erro" *ngIf="password?.errors?.required">Password is required</small>
-                    <small class="mensagem-erro">{{ errorMessage }}</small>
+                    <small *ngIf="password?.errors?.required">Password is required</small>
+                    <small *ngIf="password?.errors?.minlength">Password should contains at least 8 characters, a lowercase, a uppercase character and a digit</small>
                 </div>
             </div>
             <div>
                 <input class="card-terms" type="checkbox" formControlName="terms">
-                <span> I have read and agree to the <a href="https://www.termsandconditionsgenerator.com/live.php?token=ciaKp8Nn2ZvwtaRzupiWRpCrpj39DbiA">Terms of Service</a></span>
+                <span> I have read and agree to the 
+                    <a href="https://www.termsandconditionsgenerator.com/live.php?token=ciaKp8Nn2ZvwtaRzupiWRpCrpj39DbiA">Terms of Service</a>
+                </span>
 
                 <!-- Error Message Display -->
-                <div *ngIf="terms?.invalid && terms?.touched" class="error-message">
-                    <small *ngIf="terms?.errors?.requiredTrue">You must agree to the terms</small>
+                <div *ngIf="terms?.invalid && terms?.dirty" class="error-message">
+                    <small *ngIf="terms?.errors?.required">You must agree to the terms</small>
                 </div>
             </div>
-            <input class="signup-button" type="submit" value="Signup">
+            <input class="signup-button" type="submit" value="Signup" [disabled]="signupForm.invalid">
         </form>
     </div>
 </div>
