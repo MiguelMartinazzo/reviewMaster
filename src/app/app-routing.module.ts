@@ -4,7 +4,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './auth/auth.guard';
-import { ForumComponent } from './pages/forum/forum.component';
+import { CrudForumComponent } from './pages/crudForum/crudForum.component';
 
 const routes: Routes = [
   //Variables that contains all functions for login page
@@ -12,7 +12,7 @@ const routes: Routes = [
     path: '', redirectTo: '/login', pathMatch: 'full'
   },
   {
-    path: 'forum', component: ForumComponent
+    path: 'forum', component: CrudForumComponent
   },
   {
     path: 'login', component: LoginComponent
@@ -25,9 +25,6 @@ const routes: Routes = [
     path: 'admin', component: AdminComponent, canActivate: [authGuard]
   },
 
-  {
-    path: 'forum', component: ForumComponent, canActivate: [authGuard]
-  }
 ];
 
 @NgModule({
