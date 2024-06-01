@@ -22,16 +22,14 @@ Também é bom ter um editor para trabalhar com o código como [VSCode](https://
 
 ### :warning: ATENÇÃO!!
 
-É necessário clonar esse repositório (https://github.com/techiediaries/node-mongoose-jwt.git) 
-e rodar ele juntamente com o WebSite com **npm start**, para isso rode **npm install** na pasta raiz
-Para tudo funcionar é necessário inicializar a API antes de subir o site.
+É necessário descompactar o arquivo node-mongoose-jwt.rar que está dentro da pasta reviewMaster
+pois ele é nossa api de login, com isso ira criar uma pasta chamada node-mongoose-jwt.
 
 ### :rocket: Iniciando o WebSite
 
-Para inicializar o nosso WebSite, após ter clonado nosso repositório via git clone, você terá
-que executar **ng serve -o** dentro da pasta raiz do projeto e após abrir o WebSite realizar o login
-caso tenha um registro, caso não tenha realizar o registro. Assim você estara livre pelo mundo 
-de ReviewMaster.
+Para inicializar o nosso WebSite, você terá que executar **npm start** dentro da pasta raiz do projeto
+e após abrir o WebSite realizar o login caso tenha um registro, caso não tenha realizar o registro. 
+Assim você estara livre pelo mundo de ReviewMaster.
 
 ### :globe_with_meridians: Mapa do Projeto
 <p id="mapaprojeto" align="left">Abaixo segue a estrutura de pastas e suas definições:</p>
