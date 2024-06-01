@@ -62,3 +62,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [NPM](**npm install**) 
 - [NVM](**nvm install 20.10.0**)
 - [API](https://github.com/techiediaries/node-mongoose-jwt)
+- [MongoDB](https://fastdl.mongodb.org/windows/mongodb-windows-x86_64-7.0.11-signed.msi)
