@@ -1,0 +1,32 @@
+.social-media-container {
+    text-align: center;
+    padding: 20px;
+    
+  }
+  
+  .social-media-container ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .social-media-container li {
+    display: inline-block;
+    margin: 10px;
+  }
+  
+  .social-media-container img {
+    width: 50px;
+    height: 50px;
+    vertical-align: middle;
+    margin-right: 10px;
+  }
+  
+  .social-media-container a {
+    text-decoration: none;
+    color: #000;
+    font-size: 20px;
+  }
+  
+  .social-media-container a:hover {
+    color: #007BFF;
+  }

@@ -25,6 +25,7 @@
     "@angular/ssr": "^18.0.1",
     "bootstrap": "^4.6.2",
     "express": "^4.18.2",
+    "material-icons": "^1.13.12",
     "react-bootstrap": "^0.32.4",
     "rxjs": "~7.8.0",
     "zone.js": "~0.14.3"

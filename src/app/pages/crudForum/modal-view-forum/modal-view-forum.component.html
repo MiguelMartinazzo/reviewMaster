@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>{{jogo}}</h2>
+
+<mat-dialog-content class="mat-typography">
+  <h4>Um dos melhores?</h4>
+  <p>{{conteudo}}</p>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button onclick="comentar()">Comentar</button>
+  <button mat-button [mat-dialog-close]="true" >Sair</button>
+</mat-dialog-actions>
