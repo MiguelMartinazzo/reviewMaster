@@ -1,0 +1,31 @@
+<app-menu></app-menu>
+
+<div class="forum">
+
+<ul class="nav justify-content-end">
+  <h1>Forum  |</h1>
+  
+  <li class="nav-item">
+    <a class="nav-link active"><button type="button" class="btn btn-primary" 
+      onclick="">Criar Discussão</button></a>
+
+
+  </li>
+</ul>
+</div>
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">{{titulo}}</h5>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Por: {{user}}</h6>
+    <h6 class="card-subtitle mb-2 text-body-secondary">Game: {{jogo}} </h6>
+    <mat-divider></mat-divider>
+    
+    <button type="button" class="btn btn-primary" mat-button (click)="openDialog()">Visualizar</button>
+  </div>
+
+
+
+  
+</div>
+

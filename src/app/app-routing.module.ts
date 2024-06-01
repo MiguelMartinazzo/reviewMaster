@@ -3,6 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
+import { authGuard } from './auth/auth.guard';
+import { CrudForumComponent } from './pages/crudForum/crudForum.component';
+import path from 'path';
+import { SocialmediaComponent } from './pages/socialmedia/socialmedia.component';
 import { ForumComponent } from './pages/forum/forum.component';
 import { HomeComponent } from './pages/home/home.component';
 //import { HomeCrudComponent } from './pages/homeCrud/homeCrud.component';
@@ -14,6 +18,12 @@ const routes: Routes = [
   //Variables that contains all functions for login page
   {
     path: '', redirectTo: '/login', pathMatch: 'full'
+  },
+  {
+    path: 'forum', component: CrudForumComponent
+  },
+  {
+    path: 'socialmedia', component: SocialmediaComponent
   },
   {
     path: 'login', component: LoginComponent
