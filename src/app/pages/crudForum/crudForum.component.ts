@@ -1,12 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
-import { ThemePalette } from '@angular/material/core';
-import { Discussao } from '../../models/discussao';
+import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { AuthService } from '../../auth/auth.service';
-import { MatTableDataSource } from '@angular/material/table';
 import { ModalViewForumComponent } from './modal-view-forum/modal-view-forum.component';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
+
+
 
 @Component({
   selector: 'app-crudForum',
@@ -14,24 +10,22 @@ import { MatSort } from '@angular/material/sort';
   styleUrl: './crudForum.component.scss'
 })
 export class CrudForumComponent {
-  displayedColumns: string[] = ['id', 'name', 'game', 'titulo', 'comentario'];
-  dataSource: any;
-  listDiscuss: Discussao[] = [];
+  constructor(
+    public dialog: MatDialog
+  ){}
 
-  constructor(private forumservice: AuthService, public dialog: MatDialog) { 
-    this.dataSource = new MatTableDataSource<Discussao>(this.listDiscuss);
-  }
-  @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
-  @ViewChild(MatSort) sort: MatSort | undefined;
-  
+  openDialog() {
+    const dialogRef = this.dialog.open(ModalViewForumComponent);
 
-  
-  openModalViewMateria() {
-    this.dialog.open(ModalViewForumComponent, {
-      width: '700px',
-      height: '350px',
-      //data: discussao
-    })
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('fechado');
+    });
   }
 
-  } 
+  titulo = 'Um dos melhores?'
+  user = `Sidnei Goes`;
+  jogo = 'God of War Ragnarok'
+
+
+
+}

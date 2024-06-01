@@ -11,6 +11,10 @@ import { MenuComponent } from './menu/menu.component';
 import { CrudForumComponent } from './pages/crudForum/crudForum.component';
 import { ModalFormForumComponent } from './pages/crudForum/modal-form-forum/modal-form-forum.component';
 import { ModalViewForumComponent } from './pages/crudForum/modal-view-forum/modal-view-forum.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import { SocialmediaComponent } from './pages/socialmedia/socialmedia.component';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -18,14 +22,20 @@ import { ModalViewForumComponent } from './pages/crudForum/modal-view-forum/moda
     MenuComponent,
     CrudForumComponent,
     ModalFormForumComponent,
-    ModalViewForumComponent   
+    ModalViewForumComponent,
+    SocialmediaComponent   
     
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatDividerModule,
+    MatGridListModule
+    
+  
   ],
   providers: [
     provideClientHydration(),

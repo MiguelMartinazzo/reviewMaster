@@ -5,6 +5,8 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { AdminComponent } from './pages/admin/admin.component';
 import { authGuard } from './auth/auth.guard';
 import { CrudForumComponent } from './pages/crudForum/crudForum.component';
+import path from 'path';
+import { SocialmediaComponent } from './pages/socialmedia/socialmedia.component';
 
 const routes: Routes = [
   //Variables that contains all functions for login page
@@ -13,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'forum', component: CrudForumComponent
+  },
+  {
+    path: 'socialmedia', component: SocialmediaComponent
   },
   {
     path: 'login', component: LoginComponent
